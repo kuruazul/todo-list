@@ -1,0 +1,15 @@
+.modal-title__status{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & .status__label{
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: red;
+        &.finished{
+            background-color: green;
+        }
+    }
+}

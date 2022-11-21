@@ -1,0 +1,151 @@
+.list-item__item-shape{
+	padding: 16px;
+	border: #e2e2e2;
+	box-shadow: 0 0 5px #a2a2a2;
+	border-radius: 6px;
+}
+
+.list-side{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.list-side__header{
+	@extend .list-item__item-shape;
+	@extend .d-flex;
+}
+
+.list-side__header-description{
+		@extend .col-6;
+		@extend .col-sm-8;
+		font-size: 18px;
+		font-weight: 700;
+		text-transform: capitalize;
+}
+
+.list-side__header-status{
+		@extend .col-2;
+		font-size: 18px;
+		font-weight: 700;
+		text-align: center;
+}
+
+.list-side__header-actions{
+		@extend .col-4;
+		@extend .col-sm-2;
+		font-size: 18px;
+		font-weight: 700;
+		text-align: center;
+}
+
+.list-item{
+	@extend .list-side__header;
+	@extend .d-flex;
+	box-shadow: 0 0 3px #e2e2e2;
+	transition: all 0.3s;
+
+	&.finished{
+		.list-item__description{
+			text-decoration: line-through;
+			color: white;
+		}
+
+		.list-item__actions i{
+			color: white;
+		}
+
+		background-color: green;
+	}
+
+	&:hover{
+		box-shadow: 0 0 5px #a2a2a2;
+	}
+}
+
+.list-item__description{
+		@extend .list-side__header-description;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: 400;
+		text-transform: none;
+}
+
+.list-item__status{
+		@extend .list-side__header-status;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.status__check-bg{
+				width: 40px;
+				height: 20px;
+				background-color: red;
+				border-radius: 10px;
+				transition: all 0.5s;
+				position: relative;
+
+				.status__check-circle{
+						transition: transform 0.5s;
+						position: absolute;
+						top: 0 ;
+						left: 0;
+						width: 16px;
+						height: 16px;
+						border-radius: 100%;
+						background-color: white;
+						margin: 2px;
+				}
+		}
+
+	input{
+		display: none;
+
+		& + label:hover{
+				cursor: pointer;
+		}
+
+		&:checked +  label .status__check-bg{
+			background-color: green;
+			outline: 1px solid #fff;
+			.status__check-circle{
+				transform: translate(20px);
+			}
+		}
+	}
+}
+
+.list-item__actions{
+		@extend .list-side__header-actions;
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 20px;
+
+		.action__see-more{
+			color: rgb(175, 175, 7);
+			font-size: 14px;
+			scale: 2;
+			-webkit-text-stroke: 3px solid white;
+			transition: all 0.1s;
+			&:hover{
+				cursor: pointer;
+				scale: 2.2;
+			}
+		}
+
+		.action__delete{
+			color: red;
+			font-size: 14px;
+			scale: 1.7;
+			-webkit-text-stroke: 3px solid white;
+			transition: all 0.1s;
+
+			&:hover {
+				cursor: pointer;
+				scale: 1.8;
+			}
+		}
+}
