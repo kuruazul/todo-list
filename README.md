@@ -3,7 +3,7 @@
 * Run 'npm start' to init web local server.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Description
+## Description
 
 A simple todo app where you can add task for your todolist also adding checkers for validation on fields in order to avoid deep issues on the whole app, its fully responsive, adapting the whole UI for every screen from mobile view to desktop view. also the UI elements where used on splitted compoenents takeing advantage of the React basis
 
