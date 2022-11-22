@@ -1,6 +1,6 @@
-### npm start
-
-Runs the app in the development mode.\
+## Settin up!
+Run 'npm install' for install all the used libraries in this project
+Run 'npm start' to init web local server
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Description
